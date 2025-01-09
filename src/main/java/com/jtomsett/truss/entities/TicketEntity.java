@@ -1,4 +1,7 @@
-package com.jtomsett.truss.dtos;
+package com.jtomsett.truss.entities;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -11,8 +14,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @ToString
-public class Ticket {
+@Table(name = "ticket")
+public class TicketEntity {
 
+    @Id
     private int id;
 
     @NotBlank
@@ -20,4 +25,5 @@ public class Ticket {
     @Getter
     @Setter
     private String title;
+
 }
